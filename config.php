@@ -7,10 +7,11 @@
         require_once ('./classes/'.$tab[1].'.class.php');
 }*/
 
-function loadApi($api)
+function loadApi($classe)
 {
-    if (file_exists('./api/'.$api.'/'.$api.'.php'))
-        require_once './api'.$api.'/'.$api.'.php';
+    $api = split('[\\]', $classe);
+    if (file_exists('./api/'.$api[0].'/'.$api[0].'.php'))
+        require_once './api/'.$api[0].'/'.$api[0].'.php';
 }
 
 spl_autoload_register('loadApi');
