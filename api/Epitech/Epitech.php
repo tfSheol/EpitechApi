@@ -63,51 +63,64 @@ class Epitech {
         }
     }
     
-    public function getData() {
+    /**
+     * A delete
+     * @return type
+     */
+    public function &getData() {
         return $this->_data;
     }
     
-    public function getActivites() {
-        return $this->_activites;
+    private function &findGoodMethod($class, $method) {
+        foreach (get_class_methods($class) as $data) {
+            if (strcmp($method, $data) === 0) {
+                return $class->$method();
+            }
+        }
+        echo 'ERROR: '.$method.' no found in '.get_class($class).' Class';
     }
     
-    public function getCurrent() {
-        return $this->_current;
+    public function &getActivites($method) {
+        return $this->findGoodMethod($this->_activites, $method);
     }
     
-    public function getDivers() {
-        return $this->_divers[];
+    public function &getCurrent($method) {
+        return $this->findGoodMethod($this->_current, $method);
     }
     
-    public function getHistory() {
-        return $this->_history;
+    public function &getDivers($method) {
+        return $this->findGoodMethod($this->_divers, $method);
     }
     
-    public function getInfos() {
-        return $this->_infos;
+    public function &getHistory($method) {
+        return $this->findGoodMethod($this->_history, $method);
     }
     
-    public function getModules() {
-        return $this->_modules;
+    public function &getInfos($method) {
+        return $this->findGoodMethod($this->_infos, $method);
     }
     
-    public function getNotes() {
-        return $this->_notes;
+    public function &getModules($method) {
+        return $this->findGoodMethod($this->_modules, $method);
     }
     
-    public function getProjets() {
-        return $this->_projets;
+    public function &getNotes($method) {
+        return $this->findGoodMethod($this->_notes, $method);
     }
     
-    public function getStages() {
-        return $this->_stages;
+    public function &getProjets($method) {
+        return $this->findGoodMethod($this->_projets, $method);
     }
     
-    public function getSusies() {
-        return $this->_susies;
+    public function &getStages($method) {
+        return $this->findGoodMethod($this->_stages, $method);
     }
     
-    public function getTickets() {
-        return $this->_tickets;
+    public function &getSusies($method) {
+        return $this->findGoodMethod($this->_susies, $method);
+    }
+    
+    public function &getTickets($method) {
+        return $this->findGoodMethod($this->_tickets, $method);
     }
 }

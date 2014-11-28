@@ -11,7 +11,7 @@ class Divers {
     private static $_ip;
     
     public function __construct($data) {
-        $this->_ip = $data;
+        $this->_ip = $data->ip;
     }
     
     public function getIp() {

@@ -8,5 +8,25 @@ namespace Epitech;
  * @author Sheol
  */
 class Activites {
-    //put your code here
+    private static $_activites;
+    
+    public function __construct($data) {
+        $this->_activites = $data->board->activites;
+    }
+    
+    public function &getNbActivites() {
+        return count($this->_activites);
+    }
+    
+    public function &getFirstActivites() {
+        return $this->_activites[0];
+    }
+    
+    public function &getLastActivites() {
+        return $this->_activites[$this->getNbActivites() - 1];
+    }
+    
+    public function &getActivites() {
+        return $this->_activites;
+    }
 }
