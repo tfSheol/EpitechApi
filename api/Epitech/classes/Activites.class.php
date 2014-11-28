@@ -8,7 +8,7 @@ namespace Epitech;
  * @author Sheol
  */
 class Activites {
-    private static $_activites;
+    private $_activites;
     
     public function __construct($data) {
         $this->_activites = $data->board->activites;
@@ -18,11 +18,11 @@ class Activites {
         return count($this->_activites);
     }
     
-    public function &getFirstActivites() {
+    public function &getFirstActivite() {
         return $this->_activites[0];
     }
     
-    public function &getLastActivites() {
+    public function &getLastActivite() {
         return $this->_activites[$this->getNbActivites() - 1];
     }
     

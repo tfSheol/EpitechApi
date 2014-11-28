@@ -9,21 +9,21 @@ namespace Epitech;
  */
 
 class Epitech {
-    private static $_login;
-    private static $_password;
-    private static $_data;
-    private static $_activites;
-    private static $_connect;
-    private static $_current;
-    private static $_divers;
-    private static $_history;
-    private static $_infos;
-    private static $_modules;
-    private static $_notes;
-    private static $_projets;
-    private static $_stages;
-    private static $_susies;
-    private static $_tickets;
+    private $_login;
+    private $_password;
+    private $_data;
+    private $_activites;
+    private $_connect;
+    private $_current;
+    private $_divers;
+    private $_history;
+    private $_infos;
+    private $_modules;
+    private $_notes;
+    private $_projets;
+    private $_stages;
+    private $_susies;
+    private $_tickets;
     
     public function __construct($login, $password) {
         $this->_login = $login;
@@ -45,7 +45,6 @@ class Epitech {
     }
     
     private function loader($classe) {
-        echo $classe.'<br/>';
         $tab = split('[\\]', $classe);
         if (file_exists('./api/'.$tab[0].'/classes/'.$tab[1].'.class.php'))
             require_once ('./api/'.$tab[0].'/classes/'.$tab[1].'.class.php');

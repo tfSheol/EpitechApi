@@ -8,7 +8,7 @@ namespace Epitech;
  * @author Sheol
  */
 class Notes {
-    private static $_notes;
+    private $_notes;
     
     public function __construct($data) {
         $this->_notes = $data->board->notes;
