@@ -4,5 +4,5 @@
 * PHP cURL extension >= 7.0
 
 ## TODO
-* Module Infos
+* Module Infos #2
 * Docs

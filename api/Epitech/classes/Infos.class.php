@@ -100,7 +100,83 @@ class Infos {
         $this->_decoded = $data->infos->decoded;
     }
     
+    public function getId() {
+        return $this->_id;
+    }
+    
+    public function getLogin() {
+        return $this->_getLogin;
+    }
+    
+    public function getName() {
+        return $this->_title;
+    }
+    
+    public function getEmail() {
+        return $this->_email;
+    }
+    
+    public function getInternalEmail() {
+        return $this->_internalEmail;
+    }
+    
+    public function getLastname() {
+        return $this->_lastname;
+    }
+    
+    public function getFirstname() {
+        return $this->_firstname;
+    }
+    
+    public function getUserInfo() {
+        return $this->_userInfo;
+    }
+    
+    public function getReferentUsed() {
+        return $this->_referentUsed;
+    }
+    
+    public function getPicture() {
+        return "https://cdn.local.epitech.eu/userprofil/commentview/".$this->_picture;
+    }
+    
+    public function getFunPicture() {
+        return "https://cdn.local.epitech.eu/userprofil/commentview/".$this->_pictureFun;
+    }
+    
+    public function getEmailReferent() {
+        return $this->_emailReferent;
+    }
+    
+    public function getPassReferent() {
+        return $this->_passReferent;
+    }
+    
+    public function getPromo() {
+        return $this->_promo;
+    }
+    
+    public function getSemester() {
+        return $this->_semester;
+    }
+    
+    public function getUid() {
+        return $this->_uid;
+    }
+    
+    public function getGid() {
+        return $this->_gid;
+    }
+    
     public function getCity() {
         return $this->_location;
+    }
+    
+    public function getDocuments() {
+        return $this->_documents;
+    }
+    
+    public function getUserDocs() {
+        return $this->_userDocs;
     }
 }
