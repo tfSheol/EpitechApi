@@ -36,8 +36,10 @@ class History {
     }
     
     private function &getGoodInfos(&$categorie, $tmp) {
-        foreach ($this->_history as $key => $value) {
-            $categorie[$key] = $value->$tmp;
+        if (isset($this->_history)) {
+            foreach ($this->_history as $key => $value) {
+                $categorie[$key] = $value->$tmp;
+            }
         }
         return $categorie;
     }

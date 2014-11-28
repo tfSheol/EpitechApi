@@ -52,14 +52,11 @@ class Epitech {
     }
     
     public function connect() {
-        $data = $this->_data;
-        if ($this->_connect->checkLogin($data->message) === true)
-        {
-            if ($this->_connect->checkLocation($data->infos->location) === true)
-            {
-                $_SESSION['user'] = $this->_login;
-                return true;
-            }
+        if (isset($this->_data->message)) {
+            return false;
+        } else {
+            $_SESSION['user'] = $this->_login;
+            return true;
         }
     }
 

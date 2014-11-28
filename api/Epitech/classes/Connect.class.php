@@ -13,25 +13,13 @@ class Connect {
         $output = str_replace('// Epitech JSON webservice ...', '', $output);
         $output = str_replace('null', '"null"', $output);
         $output = trim($output);
-        if (strpos($output, '[') != 0)
+        if (strpos($output, '[') != 0) {
                 $output = '['.$output;
-        if (strrpos($output, ']') != (strlen($output) - 1))
+        }
+        if (strrpos($output, ']') != (strlen($output) - 1)) {
                 $output = $output.']';
+        }
         return $output;
-    }    
-    
-    public function checkLogin($msg) {
-        if (strcmp($msg, "Le login et/ou le mot de passe sont invalides.") == 0)
-            return false;
-        else
-            return true;
-    }
-
-    public function checkLocation($location) {
-        if ($location == "FR/MAR")
-            return true;
-        else
-            return false;
     }
 
     public function getData($login, $password) {
