@@ -1,6 +1,6 @@
 <?php
 
-namespace Epitech;
+namespace api\Epitech\classes;
 
 /**
  * Description of Tickets
@@ -8,10 +8,12 @@ namespace Epitech;
  * @author Sheol
  */
 class Tickets {
-    private static $_tickets;
+    private $_tickets;
     
     public function __construct($data) {
-        $this->_tickets = $data->board->tickets;
+        if (!isset($data->message)) {
+            $this->_tickets = $data->board->tickets;
+        }
     }
     
     public function &getNbTickets() {

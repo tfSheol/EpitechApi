@@ -1,6 +1,6 @@
 <?php
 
-namespace Epitech;
+namespace api\Epitech\classes;
 
 /**
  * Description of Divers
@@ -8,10 +8,12 @@ namespace Epitech;
  * @author Sheol
  */
 class Divers {
-    private static $_ip;
+    private $_ip;
     
     public function __construct($data) {
-        $this->_ip = $data->ip;
+        if (!isset($data->message)) {
+            $this->_ip = $data->ip;
+        }
     }
     
     public function getIp() {

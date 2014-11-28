@@ -1,6 +1,6 @@
 <?php
 
-namespace Epitech;
+namespace api\Epitech;
 
 /**
  * Description of Epitech
@@ -29,25 +29,27 @@ class Epitech {
         $this->_login = $login;
         $this->_password = $password;
         spl_autoload_register(__NAMESPACE__.'\\Epitech::loader');
-        $this->_connect = new Connect();
+        $this->_connect = new classes\Connect();
         $this->_data = $this->_connect->getData($this->_login, $this->_password);
-        $this->_activites = new Activites($this->_data);
-        $this->_current = new Current($this->_data);
-        $this->_divers = new Divers($this->_data);
-        $this->_history = new History($this->_data);
-        $this->_infos = new Infos($this->_data);
-        $this->_modules = new Modules($this->_data);
-        $this->_notes = new Notes($this->_data);
-        $this->_projets = new Projets($this->_data);
-        $this->_stages = new Stages($this->_data);
-        $this->_susies = new Susies($this->_data);
-        $this->_tickets = new Tickets($this->_data);
+        $this->_activites = new classes\Activites($this->_data);
+        $this->_current = new classes\Current($this->_data);
+        $this->_divers = new classes\Divers($this->_data);
+        $this->_history = new classes\History($this->_data);
+        $this->_infos = new classes\Infos($this->_data);
+        $this->_modules = new classes\Modules($this->_data);
+        $this->_notes = new classes\Notes($this->_data);
+        $this->_projets = new classes\Projets($this->_data);
+        $this->_stages = new classes\Stages($this->_data);
+        $this->_susies = new classes\Susies($this->_data);
+        $this->_tickets = new classes\Tickets($this->_data);
     }
     
-    private function loader($classe) {
-        $tab = split('[\\]', $classe);
-        if (file_exists('./api/'.$tab[0].'/classes/'.$tab[1].'.class.php'))
-            require_once ('./api/'.$tab[0].'/classes/'.$tab[1].'.class.php');
+    public function loader($classe) {
+        $tab = explode('\\', $classe);
+        echo __DIR__;
+        if (file_exists(__DIR__.$tab[0].'/classes/'.$tab[1].'.class.php')) {
+            require_once (__DIR__.$tab[0].'/classes/'.$tab[1].'.class.php');
+        }
     }
     
     public function connect() {
@@ -61,11 +63,7 @@ class Epitech {
             }
         }
     }
-    
-    /**
-     * A delete
-     * @return type
-     */
+
     public function &getData() {
         return $this->_data;
     }
@@ -76,7 +74,7 @@ class Epitech {
                 return $class->$method();
             }
         }
-        echo 'ERROR: '.$method.' no found in '.get_class($class).' Class';
+        echo 'ERROR: '.$method.' no found in '.get_class($class).' Class.';
     }
     
     public function &getActivites($method) {

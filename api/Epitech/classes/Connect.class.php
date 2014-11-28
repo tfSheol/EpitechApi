@@ -1,6 +1,6 @@
 <?php
 
-namespace Epitech;
+namespace api\Epitech\classes;
 
 /**
  * Description of Connect
@@ -46,7 +46,6 @@ class Connect {
         curl_setopt($curl, CURLOPT_COOKIEFILE, $tmp_fname);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
-        curl_setopt($curl, CURLOPT_FOLLOWLOCATION, true);
         curl_setopt($curl, CURLOPT_POST, true);
         curl_setopt($curl, CURLOPT_POSTFIELDS, $postArray);
         

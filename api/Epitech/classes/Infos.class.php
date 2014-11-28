@@ -1,6 +1,6 @@
 <?php
 
-namespace Epitech;
+namespace api\Epitech\classes;
 
 /**
  * Description of Infos

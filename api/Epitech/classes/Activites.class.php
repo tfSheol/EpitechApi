@@ -1,6 +1,6 @@
 <?php
 
-namespace Epitech;
+namespace api\Epitech\classes;
 
 /**
  * Description of Activites
@@ -11,7 +11,9 @@ class Activites {
     private $_activites;
     
     public function __construct($data) {
-        $this->_activites = $data->board->activites;
+        if (!isset($data->message)) {
+            $this->_activites = $data->board->activites;
+        }
     }
     
     public function &getNbActivites() {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Epitech;
+namespace api\Epitech\classes;
 
 /**
  * Description of Modules
@@ -8,10 +8,12 @@ namespace Epitech;
  * @author Sheol
  */
 class Modules {
-    private static $_modules;
+    private $_modules;
     
     public function __construct($data) {
-        $this->_modules = $data->board->modules;
+        if (!isset($data->message)) {
+            $this->_modules = $data->board->modules;
+        }
     }
     
     public function &getNbModules() {

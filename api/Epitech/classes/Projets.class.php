@@ -1,6 +1,6 @@
 <?php
 
-namespace Epitech;
+namespace api\Epitech\classes;
 
 /**
  * Description of Projets
@@ -8,10 +8,12 @@ namespace Epitech;
  * @author Sheol
  */
 class Projets {
-    private static $_projects;
+    private $_projects;
     
     public function __construct($data) {
-        $this->_projects = $data->board->projets;
+        if (!isset($data->message)) {
+            $this->_projects = $data->board->projets;
+        }
     }
     
     public function &getNbProjects() {

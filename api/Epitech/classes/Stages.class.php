@@ -1,6 +1,6 @@
 <?php
 
-namespace Epitech;
+namespace api\Epitech\classes;
 
 /**
  * Description of Stages
@@ -8,10 +8,12 @@ namespace Epitech;
  * @author Sheol
  */
 class Stages {
-    private static $_stages;
+    private $_stages;
     
     public function __construct($data) {
-        $this->_stages = $data->board->stages;
+        if (!isset($data->message)) {
+            $this->_stages = $data->board->stages;
+        }
     }
     
     public function &getNbStages() {

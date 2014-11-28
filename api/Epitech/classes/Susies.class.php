@@ -1,6 +1,6 @@
 <?php
 
-namespace Epitech;
+namespace api\Epitech\classes;
 
 /**
  * Description of Susies
@@ -8,10 +8,12 @@ namespace Epitech;
  * @author Sheol
  */
 class Susies {
-    private static $_susies;
+    private $_susies;
     
     public function __construct($data) {
-        $this->_susies = $data->board->susies;
+        if (!isset($data->message)) {
+            $this->_susies = $data->board->susies;
+        }
     }
     
     public function &getNbSusies() {

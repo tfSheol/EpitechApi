@@ -1,6 +1,6 @@
 <?php
 
-namespace Epitech;
+namespace api\Epitech\classes;
 
 /**
  * Description of Current
@@ -21,16 +21,18 @@ class Current {
     private $_inprogressCredit;
     
     public function __construct($data) {
-        $this->_activeLog = $data->current->active_log;
-        $this->_creditsMin = $data->current->credits_min;
-        $this->_creditsNorm = $data->current->credits_norm;
-        $this->_creditsObjectif = $data->current->credits_obj;
-        $this->_nslogMin = $data->current->nslog_min;
-        $this->_nslogNorm = $data->current->nslog_norm;
-        $this->_semesterCode = $data->current->semester_code;
-        $this->_semesterNum = $data->current->semester_num;
-        $this->_achievedCredit = $data->current->achieved;
-        $this->_failedCredit = $data->current->failed;
-        $this->_inprogressCredit = $data->current->inprogress;
+        if (!isset($data->message)) {
+            $this->_activeLog = $data->current->active_log;
+            $this->_creditsMin = $data->current->credits_min;
+            $this->_creditsNorm = $data->current->credits_norm;
+            $this->_creditsObjectif = $data->current->credits_obj;
+            $this->_nslogMin = $data->current->nslog_min;
+            $this->_nslogNorm = $data->current->nslog_norm;
+            $this->_semesterCode = $data->current->semester_code;
+            $this->_semesterNum = $data->current->semester_num;
+            $this->_achievedCredit = $data->current->achieved;
+            $this->_failedCredit = $data->current->failed;
+            $this->_inprogressCredit = $data->current->inprogress;
+        }
     }
 }

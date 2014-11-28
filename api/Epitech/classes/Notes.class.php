@@ -1,6 +1,6 @@
 <?php
 
-namespace Epitech;
+namespace api\Epitech\classes;
 
 /**
  * Description of Notes
@@ -11,7 +11,9 @@ class Notes {
     private $_notes;
     
     public function __construct($data) {
-        $this->_notes = $data->board->notes;
+        if (!isset($data->message)) {
+            $this->_notes = $data->board->notes;
+        }
     }
     
     public function &getNbNotes() {
