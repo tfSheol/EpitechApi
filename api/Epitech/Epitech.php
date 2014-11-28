@@ -46,9 +46,8 @@ class Epitech {
     
     public function loader($classe) {
         $tab = explode('\\', $classe);
-        echo __DIR__;
-        if (file_exists(__DIR__.$tab[0].'/classes/'.$tab[1].'.class.php')) {
-            require_once (__DIR__.$tab[0].'/classes/'.$tab[1].'.class.php');
+        if (file_exists(__DIR__.'/'.$tab[2].'/'.$tab[3].'.class.php')) {
+            require_once (__DIR__.'/'.$tab[2].'/'.$tab[3].'.class.php');
         }
     }
     

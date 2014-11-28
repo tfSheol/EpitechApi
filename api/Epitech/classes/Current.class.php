@@ -35,4 +35,48 @@ class Current {
             $this->_inprogressCredit = $data->current->inprogress;
         }
     }
+    
+    public function &getActiveLog() {
+        return $this->_activeLog;
+    }
+    
+    public function &getCreditsMin() {
+        return $this->_creditsMin;
+    }
+    
+    public function &getCreditsNorm() {
+        return $this->_creditsNorm;
+    }
+    
+    public function &getCreditsObjectif() {
+        return $this->_creditsObjectif;
+    }
+    
+    public function &getNslogMin() {
+        return $this->_nslogMin;
+    }
+    
+    public function &getNslogNorm() {
+        return $this->_nslogNorm;
+    }
+    
+    public function &getSemesterCode() {
+        return $this->_semesterCode;
+    }
+    
+    public function &getSemesterNum() {
+        return $this->_semesterNum;
+    }
+    
+    public function &getAchievedCredit() {
+        return $this->_achievedCredit;
+    }
+    
+    public function &getFailedCredit() {
+        return $this->_failedCredit;
+    }
+    
+    public function &getInprogressCredit() {
+        return $this->_inprogressCredit;
+    }
 }
