@@ -1,9 +1,16 @@
 <?php
 
-$epitech = new Epitech();
+$login = "USER";
+$password = "PASSWORD";
 
-    if (isset($_POST['login']) && isset($_POST['password']) || isset($_SESSION['user'])) {
-        if ($epitech->connect($_POST['login'], $_POST['password']) == true || isset($_SESSION['user'])) {
-            // test code log
-        }
-    }
+$epitech = new api\Epitech\Epitech($login, $password);
+
+if ($epitech->connect() == true || isset($_SESSION['user'])) {
+    echo "Connected!<br />";
+}
+
+echo 'Ip user: '.$epitech->getDivers("getIp").'<br />';
+echo 'User: '.$epitech->getInfos("getLogin").'<br />';
+echo 'From: '.$epitech->getInfos("getCity").'<br />';
+echo 'Credits win: '.$epitech->getCurrent("getAchievedCredit").'<br />';
+echo 'Credits fails: '.$epitech->getCurrent("getFailedCredit").'<br />';

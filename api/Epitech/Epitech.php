@@ -67,10 +67,12 @@ class Epitech {
     private function &findGoodMethod($class, $method) {
         foreach (get_class_methods($class) as $data) {
             if (strcmp($method, $data) === 0) {
-                return $class->$method();
+                $tmp = $class->$method();
+                return $tmp;
             }
         }
-        echo 'ERROR: '.$method.' no found in '.get_class($class).' Class.';
+        echo 'ERROR: '.$method.' no found in '.get_class($class).' Class.<br/>';
+        return $method;
     }
     
     public function &getActivites($method) {
