@@ -137,11 +137,11 @@ class Infos {
     }
     
     public function &getPicture() {
-        return "https://cdn.local.epitech.eu/userprofil/commentview/".$this->_picture;
+        return 'https://cdn.local.epitech.eu/userprofil/commentview/'.$this->_picture;
     }
     
     public function &getFunPicture() {
-        return "https://cdn.local.epitech.eu/userprofil/commentview/".$this->_pictureFun;
+        return 'https://cdn.local.epitech.eu/userprofil/commentview/'.$this->_pictureFun;
     }
     
     public function &getEmailReferent() {
