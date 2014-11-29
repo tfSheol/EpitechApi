@@ -168,8 +168,39 @@ class Infos {
         return $this->_gid;
     }
     
+    private function convertCity()
+    {
+        if (strcmp($this->_location, "FR/MAR") == 0) {
+            return "Marseille";
+        } else if ($this->_location === "FR/BDX") {
+            return "Bordeaux";
+        } else if ($this->_location === "FR/LYN") {
+            return "Lyon";
+        } else if ($this->_location === "FR/MPL") {
+            return "Montpellier";
+        } else if ($this->_location === "FR/NAN") {
+            return "Nantes";
+        } else if ($this->_location === "FR/PAR") {
+            return "Paris";
+        } else if ($this->_location === "FR/STG") {
+            return "Strasbourg";
+        } else if ($this->_location === "FR/LIL") {
+            return "Lille";
+        } else if ($this->_location === "FR/NCY") {
+            return "Nancy";
+        } else if ($this->_location === "FR/NCE") {
+            return "Nice";
+        } else if ($this->_location === "FR/REN") {
+            return "Rennes";
+        } else if ($this->_location === "FR/TLS") {
+            return "Toulouse";
+        } else {
+            return $this->_location;
+        }
+    }
+    
     public function &getCity() {
-        return $this->_location;
+        return $this->convertCity();
     }
     
     public function &getDocuments() {
