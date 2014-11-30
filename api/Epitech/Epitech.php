@@ -66,7 +66,7 @@ class Epitech {
     
     private function &findGoodMethod($class, $method) {
         foreach (get_class_methods($class) as $data) {
-            if (strcmp($method, $data) === 0) {
+            if ($method === $data) {
                 $tmp = $class->$method();
                 return $tmp;
             }

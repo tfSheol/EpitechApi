@@ -170,7 +170,7 @@ class Infos {
     
     private function convertCity()
     {
-        if (strcmp($this->_location, "FR/MAR") == 0) {
+        if ($this->_location === "FR/MAR") {
             return "Marseille";
         } else if ($this->_location === "FR/BDX") {
             return "Bordeaux";
