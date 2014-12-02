@@ -7,9 +7,11 @@ $epitech = new api\Epitech\Epitech($login, $password);
 
 if ($epitech->connect() || isset($_SESSION['user'])) {
     echo "Connected!<br />";
+} else {
+    echo "Failed! <br />";
 }
 
-echo '<img src="'.$epitech->getInfos('getPicture').'"/>';
+echo '<img src="'.$epitech->getInfos('getPicture').'"/><br />';
 echo 'Ip user: '.$epitech->getDivers('getIp').'<br />';
 echo 'User: '.$epitech->getInfos('getLogin').'<br />';
 echo 'From: '.$epitech->getInfos('getCity').'<br />';
